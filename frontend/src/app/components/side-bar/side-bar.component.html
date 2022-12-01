@@ -1,0 +1,24 @@
+<div [className]="'side-bar-container'" [ngStyle]="{'width': widthBar}">
+
+  <i class="bi bi-chevron-right" (click)="changeWidthBar()" [ngStyle]="widthBar == '50px' ? {'transform': 'rotate(0deg)'} : {'transform': 'rotate(-180deg)'}"></i>
+  <span [ngStyle]="{'height': '1px', 'width': '80%', 'background-color': '#C4C4CC'}"></span>
+
+  <div [className]="'options-container'">
+    <div [className]="'option-group'" routerLink="/dashboard/home" (click)="changeColorGroup()">
+      <i class="bi bi-house" [ngStyle]="{color: colorHome}" ></i>
+      <label [ngStyle]="widthBar == '100px' ? {'display': 'flex', color: colorHome} : {'display': 'none', color: colorHome}">Home</label>
+    </div>
+    <div [className]="'option-group'" routerLink="/dashboard/account" (click)="changeColorGroup()">
+      <i class="bi bi-person" [ngStyle]="{color: colorAccount}"></i>
+      <label [ngStyle]="widthBar == '100px' ? {'display': 'flex', color: colorAccount} : {'display': 'none', color: colorAccount}">Conta</label>
+    </div>
+    <div [className]="'option-group'" routerLink="/dashboard/users" (click)="changeColorGroup()" [ngStyle]="isAdm ? {'display': 'flex'} : {'display': 'none'}">
+      <i class="bi bi-people" [ngStyle]="{color: colorUsers}"></i>
+      <label [ngStyle]="widthBar == '100px' ? {'display': 'flex', color: colorUsers} : {'display': 'none', color: colorUsers}">Usuários</label>
+    </div>
+  </div>
+
+  <span [ngStyle]="{'height': '1px', 'width': '80%', 'background-color': '#C4C4CC'}"></span>
+  <i class="bi bi-box-arrow-left" [ngStyle]="{'margin-top': '8px', 'margin-bottom': '0px'}" (click)="logOut()"></i>
+
+</div>

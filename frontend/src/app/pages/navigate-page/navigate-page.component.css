@@ -1,0 +1,19 @@
+.navigate-page-container{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: var(--gray-900);
+}
+
+.navigate-right-container{
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,34 @@
+.account-container{
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-top: 18px;
+}
+
+.account-container h1{
+  font-size: 32px;
+  color: white;
+  font-weight: 700;
+}
+
+.account-container p{
+  margin-top: 12px;
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+}
+
+.inputs-group{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  margin-left: 10px;
+}

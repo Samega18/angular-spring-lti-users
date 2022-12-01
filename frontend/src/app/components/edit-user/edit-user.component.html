@@ -1,0 +1,13 @@
+<span [className]="'edit-user-container'" [ngStyle]="isActive ? {'display': 'block'} : {'display': 'none'}">
+  <div>
+    <h1>Modificar Usuário</h1>
+    <i class="bi bi-x-square" (click)="closeEditor()"></i>
+  </div>
+  <app-input-initial valueData="{{userData.name}}" label="Alterar nome" iconName="bi bi-file-person" placeHolder="Digite seu nome"
+    [min]="2" [max]="100" [mmEnabled]="true" (valueChanged)="changeName($event)"></app-input-initial>
+  <app-input-initial valueData="{{userData.username}}" label="Username" iconName="bi bi-person" placeHolder="Digite seu nome de usuário"
+    [min]="2" [max]="20" [mmEnabled]="true" [disabledValue]="true"></app-input-initial>
+  <app-input-select2 (eventClick)="handleSelectChange($event)" [option1]="'ROLE_ADMIN'" [option2]="'ROLE_USER'" [tabindex]="2" label="{{roleName}}"></app-input-select2>
+  <app-button-initial placeHolder="Atualizar usuário" (eventClick)="updateUser()"></app-button-initial>
+  <app-button-initial placeHolder="Remover usuário" (eventClick)="removeUser()" [colorRed]="true"></app-button-initial>
+</span>

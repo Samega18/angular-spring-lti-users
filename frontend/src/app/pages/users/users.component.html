@@ -1,0 +1,32 @@
+<section [className]="'users-container'">
+  <app-edit-user #EditUserComponent (eventClick)="getNewUsers()"></app-edit-user>
+  <app-save-user #SaveUserComponent></app-save-user>
+  <h1>Usuários do LTI</h1>
+  <div [className]="'users-search-container'">
+    <app-input-initial label="" iconName="bi bi-search" placeHolder="Pesquisar usuário"
+    (valueChanged)="changeValueSearch($event)" (onKeyEnter)="keyEnterPress()"></app-input-initial>
+    <app-pagination [pageNumber]="page.number" [totalPages]="page.totalPages"
+    [pageFirst]="page.first" [pageLast]="page.last" (eventClick)="handlePageChange($event)"></app-pagination>
+    <app-input-select (eventClick)="handleSelectChange($event)" option1="Nome" option2="Username"
+    [checked]="1" [tabindex]="1"></app-input-select>
+    <app-button-icon iconName="bi bi-person-add" (eventClick)="openSaveUser()"></app-button-icon>
+  </div>
+  <table [className]="'table-container'">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Username</th>
+        <th>Perfil</th>
+        <th>Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of page.content">
+        <td>{{user.name || "Não especificado"}}</td>
+        <td>{{user.username || "Não especificado"}}</td>
+        <td>{{user.roles[0].name || "Não especificado"}}</td>
+        <td><i class="bi bi-pencil-square" (click)="openEditUser(user)"></i></td>
+      </tr>
+    </tbody>
+  </table>
+</section>

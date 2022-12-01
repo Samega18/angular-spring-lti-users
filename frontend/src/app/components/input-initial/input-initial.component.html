@@ -1,0 +1,8 @@
+<div [className]="'input-label-group'">
+  <label>{{label}}</label>
+  <div [className]="'input-group'" [ngStyle]="focus ? {'border': '2px solid #98E1FB'} : {'border': '2px solid transparent'}">
+    <i class="{{iconName}}"></i>
+    <input #box (keyup)="update(box.value)" [(ngModel)]="valueData" placeholder="{{placeHolder}}" (focus)="focus=true" (blur)="focus=false"
+      [ngStyle]="{'color': colorPl}" [attr.maxlength]="max" [type]="typeInput" [disabled]="disabledValue" (keyup.enter)="enterPress()"/>
+  </div>
+</div>

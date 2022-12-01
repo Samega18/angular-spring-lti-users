@@ -1,0 +1,13 @@
+<section [className]="'account-container'">
+  <h1>Minha conta</h1>
+  <p>Aqui você pode visualizar informações da sua conta</p>
+  <div [className]="'inputs-group'">
+    <app-input-initial label="Seu nome" iconName="bi bi-file-person" placeHolder="Essa informação não foi salva"
+    valueData="{{userData.name}}" [disabledValue]="true"></app-input-initial>
+    <app-input-initial label="Seu username" iconName="bi bi-person" placeHolder="Essa informação não foi salva"
+    valueData="{{userData.username}}" [disabledValue]="true"></app-input-initial>
+    {{//@ts-ignore}}
+    <app-input-initial label="Seu perfil" iconName="bi bi-tag" placeHolder="Essa informação não foi salva"
+    valueData="{{userData.roles[0].name}}" [disabledValue]="true"></app-input-initial>
+  </div>
+</section>

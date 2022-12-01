@@ -1,0 +1,21 @@
+<section [className]="'register-container'">
+  <div [className]="'register-header'">
+    <img src="../../../assets/initial/angular-icon.png" alt="angular_icon"/>
+    <h1>LTI Users</h1>
+    <p>Crie sua conta e comece a usar!</p>
+  </div>
+  <form [className]="'register-form'">
+      <app-input-initial label="Seu nome" iconName="bi bi-file-person" placeHolder="Digite seu nome"
+        [min]="2" [max]="100" [mmEnabled]="true" (valueChanged)="changeName($event)"></app-input-initial>
+      <app-input-initial label="Seu username" iconName="bi bi-person" placeHolder="Digite seu nome de usuário"
+        [min]="2" [max]="20" [mmEnabled]="true" (valueChanged)="changeUsername($event)"></app-input-initial>
+      <app-input-initial label="Sua senha" iconName="bi bi-lock" placeHolder="Digite sua senha"
+        [min]="2" [max]="30" [mmEnabled]="true" typeInput="password" (valueChanged)="changePassword($event)"></app-input-initial>
+      <app-input-initial label="Confirme sua senha" iconName="bi bi-lock" placeHolder="Digite novamente sua senha"
+        [min]="2" [max]="30" [mmEnabled]="true" typeInput="password" (valueChanged)="changePassword2($event)"></app-input-initial>
+      <app-button-initial placeHolder="Criar conta" (eventClick)="resquestRegister()"></app-button-initial>
+  </form>
+  <div [className]="'register-footer'">
+    <a routerLink="/login">Já possui conta? Entre por aqui!</a>
+  </div>
+</section>

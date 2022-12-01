@@ -1,0 +1,19 @@
+<div class="select2-box">
+  <div class="select2-box__current" tabindex="2">
+    <div class="select2-box__value">
+      <input class="select2-box__input" type="radio" checked="checked"/>
+      <label class="select2-box__input-text">{{label}}</label>
+    </div>
+    <img class="select2-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>
+  </div>
+  <ul class="select2-box__list">
+    <li>
+      <label class="select2-box__option" aria-hidden="aria-hidden"
+      (click)="changeValue('ROLE_ADMIN')">ROLE_ADMIN</label>
+    </li>
+    <li>
+      <label class="select2-box__option" aria-hidden="aria-hidden"
+      (click)="changeValue('ROLE_USER')">ROLE_USER</label>
+    </li>
+  </ul>
+</div>

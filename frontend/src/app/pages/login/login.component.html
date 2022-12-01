@@ -1,0 +1,19 @@
+<section [className]="'login-container'">
+  <div [className]="'login-header'">
+    <img src="../../../assets/initial/angular-icon.png" alt="angular_icon"/>
+    <h1>LTI Users</h1>
+    <p>Faça login e comece a usar!</p>
+  </div>
+  <form [className]="'login-form'">
+      <app-input-initial label="Seu username" iconName="bi bi-person" placeHolder="Digite seu nome de usuário"
+        [min]="2" [max]="20" [mmEnabled]="false" (valueChanged)="changeUsername($event)"></app-input-initial>
+      <app-input-initial label="Sua senha" iconName="bi bi-lock" placeHolder="Digite sua senha"
+        [min]="2" [max]="30" [mmEnabled]="false" typeInput="password" (valueChanged)="changePassword($event)"></app-input-initial>
+      <app-checkbox-initial label="Lembrar de mim por 7 dias"></app-checkbox-initial>
+      <app-button-initial placeHolder="Entrar na plataforma" (eventClick)="resquestLogin()"></app-button-initial>
+  </form>
+  <div [className]="'login-footer'">
+    <a>Esqueceu a senha?</a>
+    <a routerLink="/register">Não possui conta? Crie uma agora!</a>
+  </div>
+</section>

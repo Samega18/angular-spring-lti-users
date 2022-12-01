@@ -1,0 +1,18 @@
+<div [className]="'save-user-container'" [ngStyle]="isActive ? {'display': 'block'} : {'display': 'none'}">
+  <div>
+    <h1>Adicionar Usuário</h1>
+    <i class="bi bi-x-square" (click)="closeEditor()"></i>
+  </div>
+  <form [className]="'save-user-form'">
+      <app-input-initial label="Seu nome" iconName="bi bi-file-person" placeHolder="Digite seu nome"
+        [min]="2" [max]="100" [mmEnabled]="true" (valueChanged)="changeName($event)"></app-input-initial>
+      <app-input-initial label="Seu username" iconName="bi bi-person" placeHolder="Digite seu nome de usuário"
+        [min]="2" [max]="20" [mmEnabled]="true" (valueChanged)="changeUsername($event)"></app-input-initial>
+      <app-input-initial label="Sua senha" iconName="bi bi-lock" placeHolder="Digite sua senha"
+        [min]="2" [max]="30" [mmEnabled]="true" typeInput="password" (valueChanged)="changePassword($event)"></app-input-initial>
+      <app-input-initial label="Confirme sua senha" iconName="bi bi-lock" placeHolder="Digite novamente sua senha"
+        [min]="2" [max]="30" [mmEnabled]="true" typeInput="password" (valueChanged)="changePassword2($event)"></app-input-initial>
+      <app-input-select2 (eventClick)="handleSelectChange($event)" [option1]="'ROLE_ADMIN'" [option2]="'ROLE_USER'" [tabindex]="2" label="ROLE_USER"></app-input-select2>
+      <app-button-initial placeHolder="Criar conta" (eventClick)="resquestSave()"></app-button-initial>
+  </form>
+</div>
